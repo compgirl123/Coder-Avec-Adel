@@ -39,7 +39,10 @@ def shape_choice():
         user_input = input("Choisi une forme: 1.carré 2.parallélogramme 3.carré avec parralélogramme ")
         if user_input == "1":
             user_shape = input("Quel type de carré voulez vous: 1.carré normal 2.double carré 3.triple carré ")
+            # probleme
             if user_shape == "1":
+                print("Bonjour")
+                # probleme avec square
                 square()
             elif user_shape == "2":
                 doublesquare()
@@ -49,6 +52,7 @@ def shape_choice():
                 print("choisissez entre 1 à 3")
                 shape_choice()
         elif user_input == "2":
+            # marche bien
             parallelogramme()
         elif user_input == "3":
             square()
@@ -61,6 +65,7 @@ def shape_choice():
 
 def shape_choice_2():
     user_input = input("Choisi une forme: 1.carré 2.parallélogramme 3.carré avec parralélogramme 4.Changer la couleur ")
+    print(user_input)
     if user_input == "1":
         user_shape = input("Quel type de carré voulez vous: 1.carré normal 2.double carré 3.triple carré ")
         if user_shape == "1":
@@ -76,7 +81,8 @@ def shape_choice_2():
             parallelogramme()
     elif user_input == "3":
         square()
-        parallelogramme()
+        print("bonjour")
+        #parallelogramme()
     elif user_input == "4":
         user_choice()
         shape_choice_2()
@@ -99,6 +105,7 @@ def parallelogramme():
         dessin.backward(90)
 
 def square():
+        #regarde la fonction reset et done
         dessin.reset()
         turtle.done()
         dessin2 = turtle.Turtle()
