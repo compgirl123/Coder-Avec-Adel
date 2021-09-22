@@ -15,7 +15,7 @@ def exit_confirmation():
         user_choice()
 
 def user_choice():
-    user_input = input("Choisi une couleur: 1.light blue 2.light green, 3.cyan 4.red 5.white 6.effacer le dessin ")
+    user_input = input("Choisi une couleur: 1.light blue 2.light green, 3.cyan 4.red 5.white ")
     if user_input == "1":
         screen.bgcolor(couleurs[0])
     elif user_input == "2":
@@ -26,9 +26,6 @@ def user_choice():
         screen.bgcolor(couleurs[3])
     elif user_input == "5":
         screen.bgcolor(couleurs[4])
-    elif user_input == "6":
-        turtle.reset()
-        turtle.done()
     elif user_input == "exit":
         exit_confirmation()
     else:
@@ -58,33 +55,6 @@ def shape_choice():
         else:
             print("Choisissez entre 1 à 3")
             shape_choice()
-
-def shape_choice_2():
-    user_input = input("Choisi une forme: 1.carré 2.parallélogramme 3.carré avec parralélogramme 4.Changer la couleur ")
-    if user_input == "1":
-        user_shape = input("Quel type de carré voulez vous: 1.carré normal 2.double carré 3.triple carré ")
-        if user_shape == "1":
-            square()
-        elif user_shape == "2":
-            doublesquare()
-        elif user_shape == "3":
-            triplesquare()
-        else:
-            print("choisissez entre 1 à 3")
-            shape_choice()
-    elif user_input == "2":
-            parallelogramme()
-    elif user_input == "3":
-        square()
-        parallelogramme()
-    elif user_input == "4":
-        user_choice()
-        shape_choice_2()
-    elif user_input == "exit":
-        exit_confirmation()
-    else:
-        print("Choisissez entre 1 à 3")
-        shape_choice()
 
 def parallelogramme():
         #dessin = turtle.Turtle() # definir un nouveau dessin dans tortue
@@ -121,13 +91,14 @@ def triplesquare():
             dessin2.left(90)
 
 def main_function():
-    shape_choice_2()
+    shape_choice()
     
 user_choice()
-shape_choice()
-
 while True:
     turtle.reset()
     main_function()
+    
 
 turtle.done()
+        
+
