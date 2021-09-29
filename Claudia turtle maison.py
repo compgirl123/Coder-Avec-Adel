@@ -16,6 +16,7 @@ turtle.done()'''
 import turtle
 import sys
 
+print("Dimensions de l'ecran", turtle.screensize())
 dessin = turtle.Turtle()
 colors = ["red", "blue", "green", "yellow", "orange", "black"]
 
@@ -46,65 +47,80 @@ def color_choice():
         print("choisi un nombre entre 1 à 6")
         color_choice()
 
-def square():
-    dessin.clear()
-    dessin.goto(0, 0)
-    #colors = ['lime green','tomato','pale violet red','steel blue']
-    for i in range(4):
-        #dessin2.color(colors[i])
-        dessin.forward(90)
-        dessin.left(90)
+def maison():
+    def square():
+        #dessin.clear()
+        #dessin.goto(0, 0)
+        #colors = ['lime green','tomato','pale violet red','steel blue']
+        for i in range(4):
+            #dessin2.color(colors[i])
+            dessin.forward(90)
+            dessin.left(90)
 
-def square_2():
-    dessin.penup()
-    dessin.clear()
-    dessin.goto(0, 0)
-    dessin.right(90)
-    dessin.pendown()
-    #colors = ['lime green','tomato','pale violet red','steel blue']
-    for i in range(4):
-        #dessin2.color(colors[i])
-        dessin.forward(90)
-        dessin.left(90)
+    def square_2():
+        dessin.penup()
+        dessin.clear()
+        dessin.goto(0, 0)
+        dessin.right(90)
+        dessin.pendown()
+        #colors = ['lime green','tomato','pale violet red','steel blue']
+        for i in range(4):
+            #dessin2.color(colors[i])
+            dessin.forward(90)
+            dessin.left(90)
         
-def triangle():
-    #dessin.color("red")
-    dessin.left(90)
-    dessin.forward(90)
-    dessin.right(90)
-    
-    
-    for i in range(3):
+    def triangle():
+        #dessin.color("red")
+        dessin.left(90)
         dessin.forward(90)
-        dessin.left(120)
+        dessin.right(90)
+      
+        for i in range(3):
+            dessin.forward(90)
+            dessin.left(120)
 
-def porte():
-    #dessin.color("blue")
-    dessin.right(90)
-    dessin.forward(90)
-    dessin.left(90)
-    dessin.forward(30)
-    dessin.left(90)
-    for i in range(2):
-        dessin.forward(45)
+    def porte():
+        #dessin.color("blue")
         dessin.right(90)
+        dessin.forward(90)
+        dessin.left(90)
         dessin.forward(30)
-        dessin.right(90)
-    dessin.goto(90,0)
+        dessin.left(90)
+        for i in range(4):
+            dessin.forward(45)
+            dessin.right(90)
+            dessin.forward(30)
+            dessin.right(90)
+
+        
+    square()
+    triangle()
+    porte()
+    #dessin.forward(90)
+
         
 #def deplace_fleche():
 
 color_choice()
-square()
-triangle()
-porte()
+dessin.penup()
+dessin.goto(-290, 0)
+dessin.pendown()
+maison()
+dessin.penup()
+dessin.right(90)
+dessin.forward(90)
+#dessin.goto(-140, 0)
+dessin.pendown()
+maison()
+dessin.penup()
+dessin.goto(230,0)
 
-while True: 
-    color_choice()
-    square_2()
+#while True: 
+    #color_choice()
+    #square_2()
 #deplace_fleche()
-    triangle()
-    porte()
+    #triangle()
+    #porte()
 
 turtle.done()
 
