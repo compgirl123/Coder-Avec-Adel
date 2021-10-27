@@ -7,6 +7,40 @@ parent_window.title('Le programme de Adel')
 frame = tk.Frame(parent_window)
 frame.pack()
 
+#Text Widget
+my_description = tk.Text(parent_window)
+my_description.insert('1.0',"Cela est un programme Python")
+my_description.insert('1.4',"Test de ordre")
+# enlever le c de la fenetre
+my_description.delete('1.0')
+
+# Description de ce qu'on veut entrer
+username = tk.Label(parent_window,text = "Nom").place(x=10,y=50)
+# Place ou on peut entrer des donees
+entree_username = tk.Entry(parent_window).place(x=50,y=50)
+
+# Email
+email = tk.Label(parent_window,text="Email").place(x=10,y=90)
+# input
+entree_email = tk.Entry(parent_window).place(x=50,y=90)
+
+# Password (a faire par adel)
+password = tk.Label(parent_window,text="Password").place(x=10,y=130)
+
+entree_password = tk.Entry(parent_window).place(x=77,y=130)
+
+# bouton pour soumettre l'information au serveur
+bouton_soumission = tk.Button(parent_window, text="Submit",activebackground ="black",activeforeground = "white").place(x=200,y=200)
+
+# Creation d'une liste avec des boutons radio
+# mettre 4 valeurs pour selectionner.
+parent_window.geometry('100x100')
+option1 = tk.Radiobutton(parent_window,text='Option1',value='one')
+option2 = tk.Radiobutton(parent_window,text="Option2",value="two")
+option3 = tk.Radiobutton(parent_window,text="Option3",value="three")
+option4 = tk.Radiobutton(parent_window,text="Option4",value="four")
+option1.grid(column=0,row=0)
+my_description.pack()
 # creation d'un canvas en tkinter
 canvas_width = 100
 canvas_height = 100
@@ -14,6 +48,9 @@ totale = tk.Canvas(parent_window,width=canvas_width,height=canvas_height)
 totale.pack()
 creation_ligne = int(canvas_height/2)
 totale.create_line(0,creation_ligne,canvas_width,creation_ligne,fill="#FFFFFF")
+
+# creation d'un titre avec description dans l'application.
+
 
 # creation d'une fonction qu'on va faire apparaitre sur l'ecran
 def dire_allo():
