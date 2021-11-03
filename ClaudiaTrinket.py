@@ -1,11 +1,13 @@
 import tkinter as tk
 from tkinter import ttk
+import tkinter.scrolledtext as tkst
+from tkinter.ttk import Progressbar
 
 # La fenetre du programme:
 parent_window = tk.Tk()
 parent_window.title('Le programme de Adel')
-frame = tk.Frame(parent_window)
-frame.pack()
+#frame = tk.Frame(parent_window)
+#frame.pack()
 my_description = tk.Text(parent_window)
 
 def test():
@@ -37,18 +39,20 @@ def user_inputs():
 def radiobuttons():
     # Creation d'une liste avec des boutons radio
     # mettre 4 valeurs pour selectionner.
-    parent_window.geometry('100x100')
-    option1 = tk.Radiobutton(parent_window,text='Option1',value='one')
-    option2 = tk.Radiobutton(parent_window,text="Option2",value="two")
-    option3 = tk.Radiobutton(parent_window,text="Option3",value="three")
-    option4 = tk.Radiobutton(parent_window,text="Option4",value="four")
-    #option1.grid(column=0,row=0)
-    my_description.pack()
+    parent_window.title("Radio button")
+    option1 = tk.Radiobutton(parent_window,text='Option1',value=1)
+    option2 = tk.Radiobutton(parent_window,text="Option2",value=2)
+    option3 = tk.Radiobutton(parent_window,text="Option3",value=3)
+    option4 = tk.Radiobutton(parent_window,text="Option4",value=4)
+    option1.place(x=0,y=0);
+    option2.place(x=0,y=20);
+    option3.place(x=0,y=40);
+    option4.place(x=0,y=60);
 
 def canvas():
     # creation d'un canvas en tkinter
-    canvas_width = 100
-    canvas_height = 100
+    canvas_width = 500
+    canvas_height = 500
     totale = tk.Canvas(parent_window,width=canvas_width,height=canvas_height)
     totale.pack()
     creation_ligne = int(canvas_height/2)
@@ -63,11 +67,15 @@ def dire_allo():
 
 def bouton_allo():
     # creation des deux boutons avec Allo et Exit
+    frame = tk.Frame(parent_window)
+    frame.pack()
     bouton_allo = tk.Button(frame,text="Dire Allo",fg="red",command=dire_allo())
     bouton_allo.pack(side=tk.LEFT)
 
 def bouton_exit():
     # creation d'un bouton en tkinter
+    frame = tk.Frame(parent_window)
+    frame.pack()
     bouton_exit = tk.Button(frame,text='Exit',command=quit)
     #bouton.pack()
     bouton_exit.pack(side=tk.RIGHT)
@@ -109,6 +117,27 @@ def spinbox():
     )
     spin_box.pack()
     spin_box_2.pack()
+
+def scrollText():
+    txt = tkst.ScrolledText(parent_window,width=50,height=50)
+    txt.grid(column=0,row=100)
+
+def progressBar():
+    # la semaine prochaine
+    print("progress bar")
+
+def main():
+    #C'est la fonction ou on va appeler toute les fonctions qu'on va mettre dans la fenetre
+    #scrollText()
+    canvas()
+    user_inputs()
+    radiobuttons()
+    bouton_allo()
+    bouton_exit()
+    checkbutton()
+    combobox()
+    spinbox()
+main()
 parent_window.mainloop()
 
 
