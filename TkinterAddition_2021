@@ -1,0 +1,17 @@
+from tkinter import *
+
+root = Tk()
+root.geometry("450x150")
+# geometry et canvas -> similaires, ils sont 2 differentes
+# representations de la meme chose (l'ecran).
+
+# creation des labels sur l'ecran
+entrere_la_valeure = Label(root, text = "Entrer la valeur de l'integer n")
+
+def prendre_input():
+    ''' prendre valeure de input box et sauvegarde dans 
+    une variable '''
+    #N = int (entryNumber.get())
+    print("faire apres")
+
+
