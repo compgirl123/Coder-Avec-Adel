@@ -1,8 +1,11 @@
 from tkinter import *
+from tkinter.ttk import Progressbar
+from tkinter import ttk
 
 
 root = Tk()
 root.geometry("730x280")
+
 # geometry et canvas -> similaires, ils sont 2 differentes
 # representations de la meme chose (l'ecran).
 
@@ -30,9 +33,7 @@ def nombre():
     label_resultat.place(x=0,y=160)    
 
     # bouton pour la validation du resultat mathematique
-bouton_validation3 = Button(root,text='Submit',bg='blue')
-bouton_validation3.pack()
-#Button(root, text = "Validation pour factorial", bg = 'blue')#, command = nombre)
+bouton_validation3 = Button(root, text = "Validation pour factorial", fg = 'orange', command = nombre)
 bouton_validation3.place(x= 0, y= 140, width = 180)
 
 def nombre_taxe():
@@ -60,11 +61,11 @@ def nombre_prix():
     def information_taxe():
         taxe_total = Label(root, text = "Le montant du taxe est" + str((15*valeur_input_box)/100))
         taxe_total.place(x= 540, y= 40)
-    taxe_info = Button(root, text= "Informations sur les taxes", command = information_taxe)
+    taxe_info = Button(root, text= "Informations sur les taxes", fg = "blue", command = information_taxe)
     taxe_info.place(x= 540, y= 20)  
 
 # creation des labels sur l'ecran
-entrer_la_valeure = Label(root, text = "Entrer la valeur de l'integer(Pour factorial) ")
+entrer_la_valeure = Label(root, fg = "red", bg = "pink", text = "Entrer la valeur de l'integer(Pour factorial) ")
 entrer_la_valeure.place(x=20,y=20)
 
 entryNumber = Entry(root)
@@ -81,40 +82,49 @@ label_resultat4 = Label(root, text= "")
 label_resultat4.place(x = 200, y = 50)
 
 # bouton pour la validation du resultat mathematique
-bouton_validation = Button(root, text = "Validation pour les deux" , command = nombre_deux)
+bouton_validation = Button(root, fg = "orange", text = "Validation pour les deux" , command = nombre_deux)
 bouton_validation.place( x= 360, y= 140, width = 180)
 
 # bouton pour la validation du resultat mathematique
-bouton_validation2 = Button(root, text = "Validation pour taxe" , command = nombre_taxe)
+bouton_validation2 = Button(root, fg = "orange", text = "Validation pour taxe" , command = nombre_taxe)
 bouton_validation2.place( x= 180, y= 140, width = 180)
 
 
 
 # bouton pour la validation du resultat mathematique
-bouton_validation4 = Button(root, text = "Validation pour prix" , command = nombre_prix)
+bouton_validation4 = Button(root, fg = "orange", text = "Validation pour prix" , command = nombre_prix)
 bouton_validation4.place(x= 540, y= 140, width = 180)
 
-
-
 # creation des labels sur l'ecran
-entrer_la_valeure2 = Label(root, text = "Entrer la valeur de l'integer(Pour taxe) ")
+entrer_la_valeure2 = Label(root, fg = "orange", bg = "pink", text = "Entrer la valeur de l'integer(Pour taxe) ")
 entrer_la_valeure2.place(x=20,y=50)
 
 entryNumber2 = Entry(root)
 entryNumber2.place(x = 300, y =50, width = 250)
 
-
 # creation des labels sur l'ecran
-entrer_la_valeure3 = Label(root, text = "Entrer la valeur de l'integer(Pour les deux) ")
+entrer_la_valeure3 = Label(root, fg = "red", bg = "pink", text = "Entrer la valeur de l'integer(Pour les deux) ")
 entrer_la_valeure3.place(x=20,y=80)
 
 entryNumber3 = Entry(root)
 entryNumber3.place(x = 300, y =80, width = 250)
 
-entrer_la_valeure4 = Label(root, text = "Entrer la valeur de l'integer(Pour prix) ")
+entrer_la_valeure4 = Label(root, fg = "orange", bg = "pink", text = "Entrer la valeur de l'integer(Pour prix) ")
 entrer_la_valeure4.place(x=20,y=110)
 
 entryNumber4 = Entry(root)
 entryNumber4.place(x = 300, y =110, width = 250)
+
+def progress_bar():
+    style = ttk.Style()
+    style.theme_use('default')
+    style.configure("black.Horizontal.TProgressbar",background='blue')
+    bar = Progressbar(root, length=220,style='black.Horizontal.TProgressbar')
+    bar['value'] = 35
+    bar.grid(column=0,row=6)
+    bar.place(x= 270, y= 180)
+
+progress_bar()
+
 root.mainloop()
 
